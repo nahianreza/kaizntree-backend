@@ -127,6 +127,24 @@ The admin page can be accessible at http://127.0.0.1:8000/admin/
 
 The browsable API for the endpoints can be accessed at http://127.0.0.1:8000/api/
 
+## Unit testing
+
+For unit testing of the API endpoints, follow these steps:
+
+#### 2. Navigating to the right fole
+
+    Make sure to run cd to the directory of the kaizentree project 
+
+#### 1. (OPTIONAL) Switching to local database if in production database:
+
+        $env:USE_SQLITE="True"
+
+#### 3. run the command
+
+        python manage.py test
+
+
+
 
 
 
