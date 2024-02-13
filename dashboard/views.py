@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate
+from django.http import HttpResponse
 
 
 class ItemViewSet(viewsets.ModelViewSet):
@@ -36,4 +37,7 @@ class ObtainAuthToken(APIView):
             token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
         return Response({'message': 'Authentication failed'}, status=400)
+    
+def home(request):
+    return HttpResponse("Hello! Welcome to the kaizntree home page.")
 
