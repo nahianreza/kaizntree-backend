@@ -1,5 +1,5 @@
-# Kaizntree API 
-
+# Kaizntree API
+by Nahian Reza
 ## Introduction
 The Kaizntree API is a versatile backend application designed to manage an inventory of items, including their categories and tags. This document provides a guide to setting up the project, running the application and consuming the API endpoints.
 
