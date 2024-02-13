@@ -113,6 +113,10 @@ python manage.py createsuperuser
 
 #### 4. Start the development server:
 
+Make sure to run the following command in powershell(windows) to switch to local database for testing and local development:
+
+    $env:USE_SQLITE="True"
+
 python manage.py runserver
 
 #### 5. Navigate the server:
