@@ -38,6 +38,5 @@ class ObtainAuthToken(APIView):
             return Response({'token': token.key})
         return Response({'message': 'Authentication failed'}, status=400)
     
-def home(request):
-    return HttpResponse("Hello! Welcome to the kaizntree home page.")
+
 
