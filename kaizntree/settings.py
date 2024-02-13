@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-80kxws_bivxi59o=6c%ix$s3hivgi$2(44+j(+@e%#b+7nu%2j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kaizntree-deploy-435cd2062fb6.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
