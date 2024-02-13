@@ -12,7 +12,7 @@ class ItemAPITestCase(APITestCase):
         self.token = Token.objects.create(user=self.user)
         self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
 
-        # Create a category and tags for use in item creation
+        
         self.category = Category.objects.create(name='Test Category')
         self.tag1 = Tag.objects.create(name='Tag1')
         self.tag2 = Tag.objects.create(name='Tag2')
@@ -48,7 +48,7 @@ class ItemAPITestCase(APITestCase):
     def test_update_item(self):
         url = reverse('item-detail', args=[self.item.id])
         data = {
-            'sku': 'UPDATED-SKU',  # Add the 'sku' field
+            'sku': 'UPDATED-SKU',  
             'name': 'Updated Item Name',
             'in_stock': False,
             'available_stock': 50,
@@ -59,20 +59,20 @@ class ItemAPITestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.item.refresh_from_db()
         self.assertEqual(self.item.name, 'Updated Item Name')
-        # Add any additional assertions here as needed
+        
 
     def test_delete_item(self):
         """Test deleting an item"""
-        self.assertEqual(Item.objects.count(), 1)  # Ensure there is one item before deletion
+        self.assertEqual(Item.objects.count(), 1)  
         
-        # Assuming you have the correct URL pattern
+        
         url = reverse('item-detail', args=[self.item.id])
         response = self.client.delete(url)
         
-        # Check the response status code for debugging
+        
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT, msg=response.data)
         
-        self.assertEqual(Item.objects.count(), 0)  # Check again after the supposed deletion
+        self.assertEqual(Item.objects.count(), 0)  
 
 class CategoryAPITestCase(APITestCase):
     def setUp(self):
@@ -91,7 +91,7 @@ class CategoryAPITestCase(APITestCase):
         """Test listing all categories"""
         response = self.client.get('/api/categories/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)  # Assuming setUp created one category
+        self.assertEqual(len(response.data), 1)  
 
     def test_update_category(self):
         """Test updating a category"""
@@ -115,7 +115,7 @@ class TagAPITestCase(APITestCase):
         self.token = Token.objects.create(user=self.user)
         self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
         
-        # Create an initial tag
+        
         self.tag = Tag.objects.create(name='Initial Tag')
 
 
